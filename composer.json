@@ -22,7 +22,7 @@
   ],
   "autoload": {  
     "psr-4": {
-      "CleverPHP\\LaLimiting\\": "src/"
+      "ClevePHP\\LaLimiting\\": "src/"
     }
   }
 }
