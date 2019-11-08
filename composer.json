@@ -10,7 +10,7 @@
     "php": ">=7.0"  
   },
   "require-dev": {
-    "php": ">=7.2"  
+    "php": ">=7.1"  
   },
   "minimum-stability": "dev",
   "license" : "Apache-2.0",
@@ -22,7 +22,7 @@
   ],
   "autoload": {  
     "psr-4": {
-      "clevephp\\la-limiting\\": "src/"
+      "CleverPHP\\LaLimiting\\": "src/"
     }
   }
 }

@@ -8,7 +8,7 @@
  * @version 1.0 
  * @package sample2 
  */
-namespace ClevePHP\LaLimiting;
+namespace CleverPHP\LaLimiting;
 
 class LaLimiting
 {
@@ -55,13 +55,13 @@ class LaLimiting
         }
     }
 
-    public function start(\ClevePHP\LaLimiting\SourceItem $item)
+    public function start(\CleverPHP\LaLimiting\SourceItem $item)
     {
         return $this->requestNumber($item);
     }
 
     // 根据请求量
-    private function requestNumber(\ClevePHP\LaLimiting\SourceItem $item)
+    private function requestNumber(\CleverPHP\LaLimiting\SourceItem $item)
     {
         if ($this->redis) {
             $key = "LaLimiting:" . md5($item::$resources . $item::$funname);
