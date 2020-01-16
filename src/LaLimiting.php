@@ -31,28 +31,9 @@ class LaLimiting
         return self::$instance;
     }
 
-    private function __construct($redisConfig = null)
+    private function __construct($redis = null)
     {
-        if (! $this->redis) {
-            if (empty($redisConfig)) {
-                $redisConfig = \Util::config("redis");
-            }
-            if ($redisConfig && (isset($redisConfig['host'])) && isset($redisConfig['port'])) {
-                $redis = new \Redis();
-                $res = $redis->connect($redisConfig['host'], $redisConfig['port']);
-                if ($res && $redis) {
-                    if ($redisConfig['password']) {
-                        $redis->auth($redisConfig['password']);
-                    }
-                    $dbName = 0;
-                    if (isset($redisConfig['db'])) {
-                        $dbName = intval($redisConfig['db']);
-                    }
-                    $redis->select($dbName);
-                    $this->redis = $redis;
-                }
-            }
-        }
+        $this->redis = $redis;
     }
 
     public function start(\ClevePHP\LaLimiting\SourceItem $item)
